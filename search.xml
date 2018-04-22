@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[Hello World]]></title>
     <url>%2F2018%2F04%2F16%2Fhello-world%2F</url>
-    <content type="text"><![CDATA[Welcome to MyBlog 12345#include &lt;stdio.h&gt;int main()&#123; printf("Hello World!")&#125; 123456#include &lt;iostream&gt;using namespace std;int main()&#123; cout&lt;&lt;"Hello World!"&lt;&lt;endl;&#125; 123456789public class Test &#123; public static void main(String[] args) &#123; // TODO Auto-generated method stub System.out.println("Hello World"); &#125;&#125; 1print("Hello World")]]></content>
+    <content type="text"><![CDATA[Welcome to MyBlog 123456//C#include &lt;stdio.h&gt;int main()&#123; printf("Hello World!")&#125; 1234567//C++#include &lt;iostream&gt;using namespace std;int main()&#123; cout&lt;&lt;"Hello World!"&lt;&lt;endl;&#125; 12345678910//Javapublic class Test &#123; public static void main(String[] args) &#123; // TODO Auto-generated method stub System.out.println("Hello World"); &#125;&#125; 12#Pythonprint("Hello World")]]></content>
       <categories>
         <category>程序设计语言</category>
       </categories>
