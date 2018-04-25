@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="computerKID.Blog">
 <meta property="og:description" content="深入学习C的预处理。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-04-25T04:57:51.846Z">
+<meta property="og:updated_time" content="2018-04-25T06:38:39.033Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="C的预处理">
 <meta name="twitter:description" content="深入学习C的预处理。">
@@ -386,7 +386,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  653
+                  1,471
                 </span>
               
 
@@ -402,7 +402,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  2
+                  6
                 </span>
               
             </div>
@@ -498,7 +498,89 @@
 </tr>
 </tbody>
 </table>
-<h2 id="宏定义"><a href="#宏定义" class="headerlink" title="宏定义"></a>宏定义</h2>
+<h2 id="宏定义"><a href="#宏定义" class="headerlink" title="宏定义"></a>宏定义</h2><p>在C语言中允许用一个标识符来表示一个<u>字符串</u>：称为宏。在预处理时，对程序的宏进行替换。其中宏定义是由源程序中的#define来完成 ，而宏的替换，主要是由预处理程序完成。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> PI 3.14159</span></span><br></pre></td></tr></table></figure>
+<ol>
+<li><p><strong>宏定义的规则</strong></p>
+<ul>
+<li><p>’#‘表示一条预处理的指令，以’#‘开头的均是预处理指令</p>
+</li>
+<li><p>#define是宏定义的指令，标识符是所定义的宏名</p>
+</li>
+<li><p>宏名一般都是大写的字母表示，以便和变量名区别</p>
+</li>
+<li><p>宏定义其实并不是C语言的语句，所以后面是不用去加” ；“</p>
+</li>
+<li><p>宏体可以是常数，表达式，格式化字符串等，为表达式的时候应该用括号括起来</p>
+</li>
+<li><p>宏替换不分配内存空间，也不做正确性的检查</p>
+</li>
+<li><p>宏的范围是从定义后到所在源文件结束，但是可以通过#undef来进行提前取消</p>
+</li>
+</ul>
+</li>
+<li><p><strong>无参数宏定义、有参数宏定义</strong></p>
+<ul>
+<li><p>无参数宏定义</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="comment">/*无参数宏定义*/</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> PI 3.14159</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> A 123</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> B <span class="meta-string">"Hello World!"</span></span></span><br><span class="line"><span class="comment">//#undef B	//取消了宏B的定义，那么宏B就不能再程序中使用</span></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">宏的移除语法</span></span><br><span class="line"><span class="comment">#undef 宏名</span></span><br><span class="line"><span class="comment">功能：删除前面定义的宏</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> sum=<span class="number">1</span>,R=<span class="number">2</span>;</span><br><span class="line">    <span class="keyword">float</span> s;</span><br><span class="line">    <span class="keyword">char</span> str[<span class="number">20</span>];</span><br><span class="line">    sum+=A;</span><br><span class="line">    s=PI*R*R;</span><br><span class="line">    <span class="built_in">strcpy</span>(str,B);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"sum=%d\n"</span>,sum);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"半径为R圆的面积:%.2f\n"</span>,s);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"输出字符串str:%s"</span>,str);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>输出结果:</p>
+<blockquote>
+<p>sum=124<br>半径为R圆的面积:12.57<br>输出字符串str:Hello World!</p>
+</blockquote>
+</li>
+<li><p>带参数宏定义</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">带参数宏定义语法结构：#define [宏名](形参列表) (宏体)</span></span><br><span class="line"><span class="comment">形式参数不分配内存单元，没有类型定义</span></span><br><span class="line"><span class="comment">注：宏名和形式参数列表之间不能有空格出现。</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/*MAX为宏名，紧跟其后(x,y)为形参列表，形参没有类型定义，</span></span><br><span class="line"><span class="comment">((x) &gt; (y) ? (x) : (y))为宏体，是一个三目运算。</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> MAX(x,y) ((x) &gt; (y) ? (x) : (y))</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> square(x) ((x) * (x))</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> square_1(x) (x * x)</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> a;</span><br><span class="line">    a=MAX(<span class="number">3</span>,<span class="number">5</span>);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"a=%d\n"</span>,a);</span><br><span class="line">    <span class="comment">//宏的本质是直接代入替换参数的位置,文本替换</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"square(5+4) is %d\n"</span>, square(<span class="number">5</span>+<span class="number">4</span>));        <span class="comment">//(5+4)*(5+4)=81</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"square_1(5+4) is %d\n"</span>, square_1(<span class="number">5</span>+<span class="number">4</span>));    <span class="comment">//5+4*5+4=29</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>输出结果:</p>
+<blockquote>
+<p>a=5<br>square(5+4) is 81<br>square_1(5+4) is 29</p>
+</blockquote>
+<p>从带有参数的宏定义，可以看出在很多场合下，宏可以当成函数使用，但是又和真正的函数是有区别的。区别如下图所示：</p>
+</li>
+</ul>
+</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>对比项</th>
+<th>带参数宏定义</th>
+<th>函数</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>处理时间</td>
+<td>编译时期</td>
+<td>程序运行时期</td>
+</tr>
+<tr>
+<td>参数类型</td>
+<td>无参数类型</td>
+<td>有具体的参数类型</td>
+</tr>
+<tr>
+<td>处理过程</td>
+<td>不分配内存，简单字符的置换</td>
+<td>分配内存，先求得实参，再传递给形参</td>
+</tr>
+<tr>
+<td>程序长度</td>
+<td>会变长</td>
+<td>不变</td>
+</tr>
+<tr>
+<td>运行速度</td>
+<td>不会占用运行时间</td>
+<td>调用和返回会占用时间</td>
+</tr>
+<tr>
+<td>支持递归</td>
+<td>不支持</td>
+<td>支持</td>
+</tr>
+</tbody>
+</table>
+
       
     </div>
     
@@ -766,7 +848,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共1.3k字</span>
+  <span class="post-count">博客全站共2.1k字</span>
 </div>
 
 
