@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="C," />
+  <meta name="keywords" content="C/C++," />
 
 
 
@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="深入学习C的预处理">
-<meta name="keywords" content="C">
+<meta name="description" content="深入学习C的预处理。">
+<meta name="keywords" content="C&#x2F;C++">
 <meta property="og:type" content="article">
-<meta property="og:title" content="C的预处理">
+<meta property="og:title" content="C&#x2F;C++的预处理">
 <meta property="og:url" content="http://yoursite.com/2018/04/24/C的预处理/index.html">
 <meta property="og:site_name" content="computerKID.Blog">
-<meta property="og:description" content="深入学习C的预处理">
+<meta property="og:description" content="深入学习C的预处理。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-04-24T13:53:02.748Z">
+<meta property="og:updated_time" content="2018-04-25T02:39:22.279Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="C的预处理">
-<meta name="twitter:description" content="深入学习C的预处理">
+<meta name="twitter:title" content="C&#x2F;C++的预处理">
+<meta name="twitter:description" content="深入学习C的预处理。">
 
 
 
@@ -126,7 +126,7 @@
 
 
 
-  <title>C的预处理 | computerKID.Blog</title>
+  <title>C/C++的预处理 | computerKID.Blog</title>
   
 
 
@@ -320,7 +320,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">C的预处理</h1>
+          <h1 class="post-title" itemprop="name headline">C/C++的预处理</h1>
         
 
         <div class="post-meta">
@@ -386,7 +386,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  110
+                  502
                 </span>
               
 
@@ -402,7 +402,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1
+                  2
                 </span>
               
             </div>
@@ -423,8 +423,28 @@
       
 
       
-        <p>深入学习C的预处理<br><a id="more"></a><br>C语言的程序第一行一般都是 #include “ “ 或者 #include &lt;&gt;,以前只知道它是预处理，其中细节没有研究过。<br>现在从头再看一遍C，跟当初第一次学习C语言的感觉是完全不一样的。（此处感慨省略一千字）<br>现在有能力深入研究一下C的预处理了，以此篇博客整理一下。</p>
-
+        <p>深入学习C的预处理。<a id="more"></a><br>C语言的程序第一行一般都是 #include “ “ 或者#include &lt; &gt;,以前只知道它是预处理，其中细节没有研<br>究过。现在从头再看一遍C，跟当初第一次学习C语言的感觉是完全不一样的。（此处感慨省略一千字）<br>现在有能力深入研究一下C的预处理了，以此篇博客整理一下。</p>
+<h2 id="预处理"><a href="#预处理" class="headerlink" title="预处理"></a>预处理</h2><p>首先在C/C++语言编译的时候，会经历以下几个步骤：预处理，编译，汇编，链接，然后生成可执行文件。整个过程是一连串动作完成的。而预处理阶段呢，也是最先执行的一个步骤。</p>
+<ol>
+<li><p><strong>定义</strong></p>
+<blockquote>
+<p>以“#”号开头的预处理指令如包含#include,宏定义制定#define等，在源程序中这些指令都放在函数之外，而且一般放在源文件里的最前面几行。预处理就是在对源程序的C/C++代码进行编译之前所作的工作，预处理是C\C++语言的一个重要的功能，它由预处理程序(预处理器)单独完成，当对一个源文件进行编译时，系统自动引用预处理程序，对源程序中的预处理进行一些<u>文本性质的操作</u>。<br>简言之，C预处理器只不过是一个<u>文本替换工具</u>而已，它们会指示编译器在实际编译之前完成所需的预处理。</p>
+</blockquote>
+</li>
+</ol>
+<ol start="2">
+<li><p><strong>类型</strong></p>
+<blockquote>
+<p>1&gt;宏定义<br>2&gt;条件编译<br>3&gt;文件包含<br>4&gt;预处理操作符#和##，预定义宏</p>
+</blockquote>
+</li>
+<li><p>任务</p>
+<blockquote>
+<p>1&gt;将头文件中的内容(.h文件)插入到源文件中 <br>2&gt;进行了宏替换的过程，定义和替换由#define指令定义的符号 <br>3&gt;删除掉注释，注释是不会带入到编译阶段 <br>4&gt;条件编译，根据“#if”后面的条件决定需要编译的代码</p>
+</blockquote>
+</li>
+</ol>
+<h2 id="宏定义"><a href="#宏定义" class="headerlink" title="宏定义"></a>宏定义</h2>
       
     </div>
     
@@ -451,7 +471,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/C/" rel="tag"><i class="fa fa-tag"></i> C</a>
+            <a href="/tags/C-C/" rel="tag"><i class="fa fa-tag"></i> C/C++</a>
           
         </div>
       
@@ -524,8 +544,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -566,7 +595,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -594,6 +623,10 @@
                     <a href="http://mindhacks.cn/" title="刘未鹏" target="_blank">刘未鹏</a>
                   </li>
                 
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.cnblogs.com/wujiechao" title="hk_lin" target="_blank">hk_lin</a>
+                  </li>
+                
               </ul>
             </div>
           
@@ -603,6 +636,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#预处理"><span class="nav-number">1.</span> <span class="nav-text">预处理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#宏定义"><span class="nav-number">2.</span> <span class="nav-text">宏定义</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -615,7 +664,7 @@
           <h3 class="widget-title">Tag Cloud</h3>
           <div id="myCanvasContainer" class="widget tagcloud">
               <canvas width="250" height="250" id="resCanvas" style="width=100%">
-                  <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/C/">C</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/C/">C++</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/">Java</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/">Python</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a><span class="tag-list-count">1</span></li></ul>
+                  <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/C-C/">C/C++</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/">Java</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/">Python</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a><span class="tag-list-count">1</span></li></ul>
               </canvas>
           </div>
       </div>
@@ -663,7 +712,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共671字</span>
+  <span class="post-count">博客全站共1.1k字</span>
 </div>
 
 
