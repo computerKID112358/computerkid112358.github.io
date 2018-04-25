@@ -87,10 +87,12 @@
 <meta property="og:site_name" content="computerKID.Blog">
 <meta property="og:description" content="深入学习C的预处理。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-04-25T03:34:19.596Z">
+<meta property="og:image" content="http://yoursite.com/2018/04/24/C的预处理/1.png">
+<meta property="og:updated_time" content="2018-04-25T04:42:25.849Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="C的预处理">
 <meta name="twitter:description" content="深入学习C的预处理。">
+<meta name="twitter:image" content="http://yoursite.com/2018/04/24/C的预处理/1.png">
 
 
 
@@ -386,7 +388,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  654
+                  653
                 </span>
               
 
@@ -431,8 +433,6 @@
 <p>以“#”号开头的预处理指令如包含#include,宏定义制定#define等，在源程序中这些指令都放在函数之外，而且一般放在源文件里的最前面几行。预处理就是在对源程序的C代码进行编译之前所作的工作，预处理是C语言的一个重要的功能，它由预处理程序(预处理器)单独完成，当对一个源文件进行编译时，系统自动引用预处理程序，对源程序中的预处理进行一些<u>文本性质的操作</u>。<br>简言之，C预处理器只不过是一个<u>文本替换工具</u>而已，它们会指示编译器在实际编译之前完成所需的预处理。</p>
 </blockquote>
 </li>
-</ol>
-<ol start="2">
 <li><p><strong>类型</strong></p>
 <blockquote>
 <p>1&gt;宏定义<br>2&gt;条件编译<br>3&gt;文件包含<br>4&gt;预处理操作符#和##，预定义宏</p>
@@ -444,10 +444,64 @@
 </blockquote>
 </li>
 <li><p><strong>指令</strong></p>
-<p>| 指令     | 描述                                                        |<br>| ——– | ———————————————————– |<br>| #define  | 定义宏                                                      |<br>| #include | 包含一个源代码文件                                          |<br>| #undef   | 取消已定义的宏                                              |<br>| #ifdef   | 如果宏已经定义，则返回真                                    |<br>| #ifndef  | 如果宏没有定义，则返回真                                    |<br>| #if      | 如果给定条件为真，则编译下面代码                            |<br>| #else    | if 的替代方案                                               |<br>| #elif    | 如果前面的 #if 给定条件不为真，当前条件为真，则编译下面代码 |<br>| #endif   | 结束一个 #if……#else 条件编译块                              |<br>| #error   | 当遇到标准错误时，输出错误消息                              |<br>| #pragma  | 使用标准化方法，向编译器发布特殊的命令到编译器              |</p>
 </li>
 </ol>
-<h2 id="宏定义"><a href="#宏定义" class="headerlink" title="宏定义"></a>宏定义</h2>
+<table>
+<thead>
+<tr>
+<th>指令</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>#define</td>
+<td>定义宏</td>
+</tr>
+<tr>
+<td>#include</td>
+<td>包含一个源代码文件</td>
+</tr>
+<tr>
+<td>#undef</td>
+<td>取消已定义的宏</td>
+</tr>
+<tr>
+<td>#ifdef</td>
+<td>如果宏已经定义，则返回真</td>
+</tr>
+<tr>
+<td>#ifndef</td>
+<td>如果宏没有定义，则返回真</td>
+</tr>
+<tr>
+<td>#if</td>
+<td>如果给定条件为真，则编译下面代码</td>
+</tr>
+<tr>
+<td>#else</td>
+<td>if 的替代方案</td>
+</tr>
+<tr>
+<td>#elif</td>
+<td>如果前面的 #if 给定条件不为真，当前条件为真，则编译下面代码</td>
+</tr>
+<tr>
+<td>#endif</td>
+<td>结束一个 #if……#else 条件编译块</td>
+</tr>
+<tr>
+<td>#error</td>
+<td>当遇到标准错误时，输出错误消息</td>
+</tr>
+<tr>
+<td>#pragma</td>
+<td>使用标准化方法，向编译器发布特殊的命令到编译器</td>
+</tr>
+</tbody>
+</table>
+<h2 id="宏定义"><a href="#宏定义" class="headerlink" title="宏定义!"></a>宏定义!</h2><p><img src="1.png" alt=""></p>
+
       
     </div>
     
@@ -649,7 +703,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#预处理"><span class="nav-number">1.</span> <span class="nav-text">预处理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#宏定义"><span class="nav-number">2.</span> <span class="nav-text">宏定义</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#预处理"><span class="nav-number">1.</span> <span class="nav-text">预处理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#宏定义"><span class="nav-number">2.</span> <span class="nav-text">宏定义!</span></a></li></ol></div>
             
 
           </div>
@@ -715,7 +769,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共1.2k字</span>
+  <span class="post-count">博客全站共1.3k字</span>
 </div>
 
 
