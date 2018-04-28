@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="computerKID.Blog">
 <meta property="og:description" content="深入学习C的预处理。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-04-25T06:38:39.033Z">
+<meta property="og:updated_time" content="2018-04-28T02:47:00.305Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="C的预处理">
 <meta name="twitter:description" content="深入学习C的预处理。">
@@ -386,7 +386,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1,471
+                  2,621
                 </span>
               
 
@@ -402,7 +402,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  6
+                  10
                 </span>
               
             </div>
@@ -424,7 +424,7 @@
 
       
         <p>深入学习C的预处理。<a id="more"></a><br>C/C++语言的程序第一行一般都是 #include “ “ 或者#include &lt; &gt;,以前只知道它是预处理，其中细节没有研究过。    现在从头再看一遍C，跟当初第一次学习C语言的感觉是完全不一样的（此处感慨省略一千字）。现在有能力深入研究一下C的预处理了，以此篇博客整理一下。</p>
-<h2 id="预处理"><a href="#预处理" class="headerlink" title="预处理"></a>预处理</h2><p>首先在C/C++语言编译的时候，会经历以下几个步骤：预处理，编译，汇编，链接，然后生成可执行文件。整个过程是一连串动作完成的。而预处理阶段呢，也是最先执行的一个步骤。</p>
+<h2 id="1、预处理"><a href="#1、预处理" class="headerlink" title="1、预处理"></a>1、预处理</h2><p>首先在C/C++语言编译的时候，会经历以下几个步骤：预处理，编译，汇编，链接，然后生成可执行文件。整个过程是一连串动作完成的。而预处理阶段呢，也是最先执行的一个步骤。</p>
 <ol>
 <li><p><strong>定义</strong></p>
 <blockquote>
@@ -498,7 +498,7 @@
 </tr>
 </tbody>
 </table>
-<h2 id="宏定义"><a href="#宏定义" class="headerlink" title="宏定义"></a>宏定义</h2><p>在C语言中允许用一个标识符来表示一个<u>字符串</u>：称为宏。在预处理时，对程序的宏进行替换。其中宏定义是由源程序中的#define来完成 ，而宏的替换，主要是由预处理程序完成。</p>
+<h2 id="2、宏定义"><a href="#2、宏定义" class="headerlink" title="2、宏定义"></a>2、宏定义</h2><p>在C语言中允许用一个标识符来表示一个<u>字符串</u>：称为宏。在预处理时，对程序的宏进行替换。其中宏定义是由源程序中的#define来完成 ，而宏的替换，主要是由预处理程序完成。</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> PI 3.14159</span></span><br></pre></td></tr></table></figure>
 <ol>
 <li><p><strong>宏定义的规则</strong></p>
@@ -580,6 +580,77 @@
 </tr>
 </tbody>
 </table>
+<h2 id="3、条件编译"><a href="#3、条件编译" class="headerlink" title="3、条件编译"></a>3、条件编译</h2><ol>
+<li><p><strong>概念</strong></p>
+<blockquote>
+<p>一般情况下，源程序中所有的行都进行编译，但是有时希望对其中一部分内容满足一定条件下才进行编译，也就是对一部分内容指定编译条件，这就是条件编译。</p>
+</blockquote>
+</li>
+<li><p><strong>优点</strong></p>
+<blockquote>
+<p>条件编译可以指定代码的一部分是被正常编译还是被完全忽略 ,条件编译有利于提升程序的可移植性，增强程序 的灵活性。</p>
+</blockquote>
+</li>
+<li><p><strong>语法</strong></p>
+<ul>
+<li><p>编译语法一：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">ifdef</span> 标识符(宏名) <span class="comment">//或者#if define(标识符) </span></span></span><br><span class="line">	程序段<span class="number">1</span> </span><br><span class="line"><span class="meta">#<span class="meta-keyword">else</span></span></span><br><span class="line">    程序段<span class="number">2</span> </span><br><span class="line"> <span class="meta">#<span class="meta-keyword">endif</span></span></span><br><span class="line"> </span><br><span class="line">实例：防止多重包含的问题产生</span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> HELLO <span class="meta-string">"helloworld"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">ifdef</span> HELLO</span></span><br><span class="line">    <span class="meta">#<span class="meta-keyword">define</span> HI <span class="meta-string">"welcome"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span></span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>编译语法二：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">ifndef</span> 标识符（宏名） <span class="comment">//或#if !define(标识符) </span></span></span><br><span class="line">	程序段<span class="number">1</span> </span><br><span class="line"><span class="meta">#<span class="meta-keyword">else</span></span></span><br><span class="line">    程序段<span class="number">2</span> </span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span></span></span><br><span class="line"></span><br><span class="line">实例：</span><br><span class="line"><span class="meta">#<span class="meta-keyword">ifndef</span> __HELLO_H__</span></span><br><span class="line">	<span class="meta">#<span class="meta-keyword">define</span> __HELLO_H__</span></span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">out</span><span class="params">()</span></span>;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">else</span></span></span><br><span class="line">    <span class="comment">//程序段2</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span></span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>编译语法三：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">if</span>(常量表达式)</span></span><br><span class="line">	程序段<span class="number">1</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">elif</span>(常量表达式2)</span></span><br><span class="line">	程序段<span class="number">2</span> </span><br><span class="line"><span class="meta">#<span class="meta-keyword">else</span></span></span><br><span class="line">	程序段<span class="number">3</span> </span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span></span></span><br><span class="line"></span><br><span class="line">实例代码：</span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> C1 0</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> C2 0 </span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> C3 1</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">if</span>(C1)</span></span><br><span class="line">	<span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"c1.h"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">elif</span>(C2)</span></span><br><span class="line">	<span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"c2.h"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">elif</span>(C3)</span></span><br><span class="line">     <span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"c3.h"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">else</span></span></span><br><span class="line">     <span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"c.h"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span></span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ol>
+<h2 id="4、文件包含"><a href="#4、文件包含" class="headerlink" title="4、文件包含"></a>4、文件包含</h2><ol>
+<li><p><strong>概念</strong></p>
+<blockquote>
+<p>文件包含是C预处理程序的另一个重要的功能，被包含的文件名字必须使用双引号” “(自定义头文件)，或者&lt; &gt;(标准库文件)括起来。例如：#include&lt;math.h&gt;,#include “myfunction.h”。</p>
+</blockquote>
+</li>
+<li><p><strong>功能</strong></p>
+<blockquote>
+<p>一个源文件可以将另外一个源文件的内容包含进来，从而把指定的文件和当前的源文件连成一个源文件。</p>
+</blockquote>
+</li>
+<li><p><strong>文件包含的处理过程：</strong> </p>
+<blockquote>
+<p>在预处理的时候，用被包含文件的内容取代该文件包含指令，再对包含后的文件作一个源文件编译。</p>
+</blockquote>
+</li>
+<li><p><strong>文件多重包含问题</strong></p>
+<ul>
+<li><p>概念：同一个文件被包含多次</p>
+</li>
+<li><p>结果：多重包含可能会出现重复定义的编译错误</p>
+</li>
+<li><p>解决方案：使用条件编译来防止多重包含,凡是在头文件前后，用条件编译去编译。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//如标准头文件的写法：</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">ifndef</span> __HEADER_NAME_H__</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> __HEADER_NAME_H__</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"headername.h"</span></span></span><br><span class="line"><span class="comment">//其他的代码</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span></span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>建议：在头文件中尽量不要去定义一些全局变量，可以在源文件中去定义，用extern去修饰。<br><a href="https://blog.csdn.net/xingjiarong/article/details/47656339" target="_blank" rel="noopener">extern的用法</a>。</p>
+</li>
+</ul>
+</li>
+</ol>
+<h2 id="5、预处理操作符和预定义宏"><a href="#5、预处理操作符和预定义宏" class="headerlink" title="5、预处理操作符和预定义宏"></a>5、预处理操作符和预定义宏</h2><ol>
+<li><p><strong>预处理操作符</strong><br>C语言中有两个预处理操作符号#。<br>操作符号#通常成为字符串化的操作符号，它把其后的串变成用双引号包围的串。<br>连接操作符号##可以把两个独立的字符串链接成一个字符串。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="comment">//一个宏通常写在一个单行上.但是如果宏太长,</span></span><br><span class="line"><span class="comment">//一个单行容纳不下，则使用宏延续运算符"\"</span></span><br><span class="line"><span class="comment">//当需要把一个宏的参数转换为字符串常量时,则使用字符串常量化运算符"#"</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> message_for(a,b) \</span></span><br><span class="line">    <span class="built_in">printf</span>(#a <span class="string">" and "</span> #b <span class="string">":We love you!\n"</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">//宏定义内的标记粘贴运算符"##"会合并两个参数.</span></span><br><span class="line"><span class="comment">//它允许在宏定义中两个独立的标记被合并为一个标记</span></span><br><span class="line"><span class="comment">//这里的token##n=token+n,而n在main()里是34,so token##n=token34=40</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> tokenpaster(n) printf(<span class="meta-string">"token"</span> #n <span class="meta-string">" = %d\n"</span>, token##n)</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    message_for(Java,Python);</span><br><span class="line">    <span class="keyword">int</span> token34 = <span class="number">40</span>;</span><br><span class="line">    tokenpaster(<span class="number">34</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>输出结果：</p>
+<blockquote>
+<p>Java and Python:We love you!<br>token34 = 40</p>
+</blockquote>
+</li>
+<li><p><strong>预定义宏</strong><br>ANSI C 定义了许多宏。在编程中你直接可以使用这些宏，但是不能直接修改这些预定义的宏。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">func</span><span class="params">(<span class="keyword">int</span> a)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"Function :%s\n"</span>,__FUNCTION__);     <span class="comment">//当前所在的函数名称</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"File :%s\n"</span>, __FILE__ );      <span class="comment">//当前文件名，一个字符串常量。</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"Date :%s\n"</span>, __DATE__ );      <span class="comment">//当前日期，一个以 "MMM DD YYYY" 格式表示的字符常量。</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"Time :%s\n"</span>, __TIME__ );      <span class="comment">//当前时间，一个以 "HH:MM:SS" 格式表示的字符常量。</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"Line :%d\n"</span>, __LINE__ );      <span class="comment">//这会包含当前行号，一个十进制常量。</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"ANSI :%d\n"</span>, __STDC__ );      <span class="comment">//当编译器以 ANSI 标准编译时，则定义为 1</span></span><br><span class="line">    func(<span class="number">1</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>输出结果：</p>
+<blockquote>
+<p>File :C:\a1-C\Test\main.c<br>Date :Apr 28 2018<br>Time :10:35:28<br>Line :14<br>ANSI :1<br>Function :func</p>
+</blockquote>
+</li>
+</ol>
 
       
     </div>
@@ -786,7 +857,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#预处理"><span class="nav-number">1.</span> <span class="nav-text">预处理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#宏定义"><span class="nav-number">2.</span> <span class="nav-text">宏定义</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1、预处理"><span class="nav-number">1.</span> <span class="nav-text">1、预处理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2、宏定义"><span class="nav-number">2.</span> <span class="nav-text">2、宏定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3、条件编译"><span class="nav-number">3.</span> <span class="nav-text">3、条件编译</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4、文件包含"><span class="nav-number">4.</span> <span class="nav-text">4、文件包含</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5、预处理操作符和预定义宏"><span class="nav-number">5.</span> <span class="nav-text">5、预处理操作符和预定义宏</span></a></li></ol></div>
             
 
           </div>
@@ -852,7 +923,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共3.8k字</span>
+  <span class="post-count">博客全站共5.0k字</span>
 </div>
 
 
