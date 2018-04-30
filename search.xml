@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[git大法好(二)：集中式VS分布式以及安装git]]></title>
     <url>%2F2018%2F04%2F28%2FGit%E5%A4%A7%E6%B3%95%E5%A5%BD(%E4%BA%8C)%2F</url>
-    <content type="text"><![CDATA[进一步了解版本控制系统。git大法好(一)初步了解了一下什么是git以及版本控制系统。接下来详细介绍一下版本控制系统，这是必要的。版本控制系统的定义（来自维基百科)。版本控制系统分为两类：集中式版本控制系统(如:CVS、SVN)，分布式版本控制系统(如:git)。 1、集中式VS分布式]]></content>
+    <content type="text"><![CDATA[进一步了解版本控制系统。git大法好(一)初步了解了一下什么是git以及版本控制系统。接下来详细介绍一下版本控制系统，这是必要的。 1、什么是版本控制？]]></content>
       <categories>
         <category>计算机相关技术应用</category>
       </categories>
