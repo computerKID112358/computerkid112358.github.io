@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="computerKID.Blog">
 <meta property="og:description" content="&amp;emsp;&amp;emsp;深入学习C的预处理。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-05-03T02:30:36.005Z">
+<meta property="og:updated_time" content="2018-05-05T13:29:25.560Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="C的预处理">
 <meta name="twitter:description" content="&amp;emsp;&amp;emsp;深入学习C的预处理。">
@@ -386,7 +386,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  2,621
+                  2,616
                 </span>
               
 
@@ -424,7 +424,7 @@
 
       
         <p>&emsp;&emsp;深入学习C的预处理。<a id="more"></a>C/C++语言的程序第一行一般都是 #include “ “ 或者#include &lt; &gt;,以前只知道它是预处理，其中细节没有研究过。    现在从头再看一遍C，跟当初第一次学习C语言的感觉是完全不一样的（此处感慨省略一千字）。现在有能力深入研究一下C的预处理了，以此篇博客整理一下。</p>
-<h2 id="1、预处理"><a href="#1、预处理" class="headerlink" title="1、预处理"></a>1、预处理</h2><p>&emsp;&emsp;首先在C/C++语言编译的时候，会经历以下几个步骤：预处理，编译，汇编，链接，然后生成可执行文件。整个过程是一连串动作完成的。而预处理阶段呢，也是最先执行的一个步骤。</p>
+<h2 id="预处理"><a href="#预处理" class="headerlink" title="预处理"></a>预处理</h2><p>&emsp;&emsp;首先在C/C++语言编译的时候，会经历以下几个步骤：预处理，编译，汇编，链接，然后生成可执行文件。整个过程是一连串动作完成的。而预处理阶段呢，也是最先执行的一个步骤。</p>
 <ol>
 <li><p><strong>定义</strong></p>
 <blockquote>
@@ -498,7 +498,7 @@
 </tr>
 </tbody>
 </table>
-<h2 id="2、宏定义"><a href="#2、宏定义" class="headerlink" title="2、宏定义"></a>2、宏定义</h2><p>&emsp;&emsp;在C语言中允许用一个标识符来表示一个<u>字符串</u>：称为宏。在预处理时，对程序的宏进行替换。其中宏定义是由源程序中的#define来完成 ，而宏的替换，主要是由预处理程序完成。</p>
+<h2 id="宏定义"><a href="#宏定义" class="headerlink" title="宏定义"></a>宏定义</h2><p>&emsp;&emsp;在C语言中允许用一个标识符来表示一个<u>字符串</u>：称为宏。在预处理时，对程序的宏进行替换。其中宏定义是由源程序中的#define来完成 ，而宏的替换，主要是由预处理程序完成。</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> PI 3.14159</span></span><br></pre></td></tr></table></figure>
 <ol>
 <li><p><strong>宏定义的规则</strong></p>
@@ -580,7 +580,7 @@
 </tr>
 </tbody>
 </table>
-<h2 id="3、条件编译"><a href="#3、条件编译" class="headerlink" title="3、条件编译"></a>3、条件编译</h2><ol>
+<h2 id="条件编译"><a href="#条件编译" class="headerlink" title="条件编译"></a>条件编译</h2><ol>
 <li><p><strong>概念</strong></p>
 <blockquote>
 <p>一般情况下，源程序中所有的行都进行编译，但是有时希望对其中一部分内容满足一定条件下才进行编译，也就是对一部分内容指定编译条件，这就是条件编译。</p>
@@ -605,7 +605,7 @@
 </ul>
 </li>
 </ol>
-<h2 id="4、文件包含"><a href="#4、文件包含" class="headerlink" title="4、文件包含"></a>4、文件包含</h2><ol>
+<h2 id="文件包含"><a href="#文件包含" class="headerlink" title="文件包含"></a>文件包含</h2><ol>
 <li><p><strong>概念</strong></p>
 <blockquote>
 <p>文件包含是C预处理程序的另一个重要的功能，被包含的文件名字必须使用双引号” “(自定义头文件)，或者&lt; &gt;(标准库文件)括起来。例如：#include&lt;math.h&gt;,#include “myfunction.h”。</p>
@@ -635,7 +635,7 @@
 </ul>
 </li>
 </ol>
-<h2 id="5、预处理操作符和预定义宏"><a href="#5、预处理操作符和预定义宏" class="headerlink" title="5、预处理操作符和预定义宏"></a>5、预处理操作符和预定义宏</h2><ol>
+<h2 id="预处理操作符和预定义宏"><a href="#预处理操作符和预定义宏" class="headerlink" title="预处理操作符和预定义宏"></a>预处理操作符和预定义宏</h2><ol>
 <li><p><strong>预处理操作符</strong><br>&emsp;&emsp;C语言中有两个预处理操作符号#。操作符号#通常成为字符串化的操作符号，它把其后的串变成用双引号包围的串。连接操作符号##可以把两个独立的字符串链接成一个字符串。</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="comment">//一个宏通常写在一个单行上.但是如果宏太长,</span></span><br><span class="line"><span class="comment">//一个单行容纳不下，则使用宏延续运算符"\"</span></span><br><span class="line"><span class="comment">//当需要把一个宏的参数转换为字符串常量时,则使用字符串常量化运算符"#"</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> message_for(a,b) \</span></span><br><span class="line">    <span class="built_in">printf</span>(#a <span class="string">" and "</span> #b <span class="string">":We love you!\n"</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">//宏定义内的标记粘贴运算符"##"会合并两个参数.</span></span><br><span class="line"><span class="comment">//它允许在宏定义中两个独立的标记被合并为一个标记</span></span><br><span class="line"><span class="comment">//这里的token##n=token+n,而n在main()里是34,so token##n=token34=40</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> tokenpaster(n) printf(<span class="meta-string">"token"</span> #n <span class="meta-string">" = %d\n"</span>, token##n)</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    message_for(Java,Python);</span><br><span class="line">    <span class="keyword">int</span> token34 = <span class="number">40</span>;</span><br><span class="line">    tokenpaster(<span class="number">34</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>输出结果：</p>
@@ -784,7 +784,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -857,7 +857,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1、预处理"><span class="nav-number">1.</span> <span class="nav-text">1、预处理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2、宏定义"><span class="nav-number">2.</span> <span class="nav-text">2、宏定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3、条件编译"><span class="nav-number">3.</span> <span class="nav-text">3、条件编译</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4、文件包含"><span class="nav-number">4.</span> <span class="nav-text">4、文件包含</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5、预处理操作符和预定义宏"><span class="nav-number">5.</span> <span class="nav-text">5、预处理操作符和预定义宏</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#预处理"><span class="nav-number">1.</span> <span class="nav-text">预处理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#宏定义"><span class="nav-number">2.</span> <span class="nav-text">宏定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#条件编译"><span class="nav-number">3.</span> <span class="nav-text">条件编译</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#文件包含"><span class="nav-number">4.</span> <span class="nav-text">文件包含</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#预处理操作符和预定义宏"><span class="nav-number">5.</span> <span class="nav-text">预处理操作符和预定义宏</span></a></li></ol></div>
             
 
           </div>
@@ -878,7 +878,7 @@
           <h3 class="widget-title">Tag Cloud</h3>
           <div id="myCanvasContainer" class="widget tagcloud">
               <canvas width="250" height="250" id="resCanvas" style="width=100%">
-                  <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/C-C/">C/C++</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/">Java</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Markdown/">Markdown</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/">Python</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a><span class="tag-list-count">1</span></li></ul>
+                  <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/C-C/">C/C++</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/">Java</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Markdown/">Markdown</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/">Python</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a><span class="tag-list-count">1</span></li></ul>
               </canvas>
           </div>
       </div>
@@ -927,7 +927,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共5.6k字</span>
+  <span class="post-count">博客全站共6.0k字</span>
 </div>
 
 
