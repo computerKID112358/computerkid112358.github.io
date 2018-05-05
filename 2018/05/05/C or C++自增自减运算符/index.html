@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="computerKID.Blog">
 <meta property="og:description" content="&amp;emsp;&amp;emsp;现在有时间每天晚上抽点时间复习C/C++语言。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-05-05T14:03:54.686Z">
+<meta property="og:updated_time" content="2018-05-05T14:43:58.237Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="C&#x2F;C++自增自减运算符">
 <meta name="twitter:description" content="&amp;emsp;&amp;emsp;现在有时间每天晚上抽点时间复习C/C++语言。">
@@ -386,7 +386,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  408
+                  415
                 </span>
               
 
@@ -423,13 +423,13 @@
       
 
       
-        <p>&emsp;&emsp;现在有时间每天晚上抽点时间复习C/C++语言。<a id="more"></a>C/C++的自增和自减运算符(++和–)是比较容易出错的一种运算符，运算符++使变量自加1，而运算符–使变量自减1。</p>
-<h3 id="前置运算"><a href="#前置运算" class="headerlink" title="前置运算"></a>前置运算</h3><p>&emsp;&emsp;++,–在变量前面，则变量先进行加1或减1运算，然后变量再参与其他运算。<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">//前置运算</span></span><br><span class="line">    <span class="keyword">int</span> a,b,x=<span class="number">5</span>,y=<span class="number">6</span>;</span><br><span class="line">    a=++x;		<span class="comment">//x先自增变成6，再赋值给a，所以a为6</span></span><br><span class="line">    b=--y;		<span class="comment">//y先自减变成5，再赋值给b，所以b为5</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"x=%d a=%d y=%d b=%d\n"</span>,x,a,y,b);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+        <p>&emsp;&emsp;现在有时间每天晚上抽点时间复习C/C++语言。<a id="more"></a>C/C++的自增和自减运算符(++和—  —)是比较容易出错的一种运算符，运算符++使变量自加1，而运算符–使变量自减1。</p>
+<h3 id="前置运算"><a href="#前置运算" class="headerlink" title="前置运算"></a>前置运算</h3><p>&emsp;&emsp;++,—  —在变量前面，则变量先进行加1或减1运算，然后变量再参与其他运算。<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">//前置运算</span></span><br><span class="line">    <span class="keyword">int</span> a,b,x=<span class="number">5</span>,y=<span class="number">6</span>;</span><br><span class="line">    a=++x;		<span class="comment">//x先自增变成6，再赋值给a，所以a为6</span></span><br><span class="line">    b=--y;		<span class="comment">//y先自减变成5，再赋值给b，所以b为5</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"x=%d a=%d y=%d b=%d\n"</span>,x,a,y,b);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>输出结果：</p>
 <blockquote>
 <p>x=6 a=6 y=5 b=5</p>
 </blockquote>
-<h3 id="后置运算"><a href="#后置运算" class="headerlink" title="后置运算"></a>后置运算</h3><p>&emsp;&emsp;++,–在变量后面，则变量先参与其他运算，然后变量再进行加1或减1运算。</p>
+<h3 id="后置运算"><a href="#后置运算" class="headerlink" title="后置运算"></a>后置运算</h3><p>&emsp;&emsp;++,—  —在变量后面，则变量先参与其他运算，然后变量再进行加1或减1运算。</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">//后置运算</span></span><br><span class="line">    <span class="keyword">int</span> a,b,x=<span class="number">5</span>,y=<span class="number">6</span>;</span><br><span class="line">    a=x++;		<span class="comment">//x先赋值给a，所以a为5，x再自增变成6</span></span><br><span class="line">    b=y--;		<span class="comment">//y先赋值给b，所以b为6，y再自减变成5</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"x=%d a=%d y=%d b=%d\n"</span>,x,a,y,b);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>输出结果：</p>
 <blockquote>
@@ -441,7 +441,7 @@
 <blockquote>
 <p>a=11</p>
 </blockquote>
-
+<h3 id="在函数中的引用"><a href="#在函数中的引用" class="headerlink" title="在函数中的引用"></a>在函数中的引用</h3>
       
     </div>
     
@@ -643,7 +643,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#前置运算"><span class="nav-number">1.</span> <span class="nav-text">前置运算</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#后置运算"><span class="nav-number">2.</span> <span class="nav-text">后置运算</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#运算符-的优先级高于"><span class="nav-number">3.</span> <span class="nav-text">运算符++的优先级高于+</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#前置运算"><span class="nav-number">1.</span> <span class="nav-text">前置运算</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#后置运算"><span class="nav-number">2.</span> <span class="nav-text">后置运算</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#运算符-的优先级高于"><span class="nav-number">3.</span> <span class="nav-text">运算符++的优先级高于+</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#在函数中的引用"><span class="nav-number">4.</span> <span class="nav-text">在函数中的引用</span></a></li></ol></div>
             
 
           </div>
