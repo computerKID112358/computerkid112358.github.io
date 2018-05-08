@@ -14,7 +14,7 @@
   <entry>
     <title><![CDATA[Markdown的学习]]></title>
     <url>%2F2018%2F05%2F04%2FMarkdown%E7%9A%84%E5%AD%A6%E4%B9%A0%2F</url>
-    <content type="text"><![CDATA[&emsp;&emsp;Markdown 是一种电子邮件风格的标记语言。既然搭了博客网站，当然要写博客。我先在本地计算机用Markdown写好文章，再通过git部署到GitHub上的，然后在网页才会显示写的文章。Markdown的基本语法十分简单，一般五分钟就能学完日常基本所需的操作。 为什么选择Markdown&emsp;&emsp;既然写东西为什么不用微软的word,一开始我是有这样的疑惑的。搜了几篇文章后终于知道缘由了。&emsp;&emsp;为什么作家应该用 Markdown 保存自己的文稿。 Markdown教程&emsp;&emsp;献给写作者的 Markdown 新手指南;&emsp;&emsp;简单详细的教程;&emsp;&emsp;官方文档。&emsp;&emsp;看完这三篇基本上就差不多了，美滋滋。]]></content>
+    <content type="text"><![CDATA[&emsp;&emsp;Markdown 是一种电子邮件风格的标记语言。既然搭了博客网站，当然要写博客。我先在本地计算机用Markdown写好文章，再通过git部署到GitHub上的，然后在网页才会显示写的文章。Markdown的基本语法十分简单，一般五分钟就能学完日常基本所需的操作。 为什么选择Markdown&emsp;&emsp;既然写东西为什么不用微软的word,一开始我是有这样的疑惑的。搜了几篇文章后终于知道缘由了。&emsp;&emsp;为什么作家应该用 Markdown 保存自己的文稿。 Markdown教程&emsp;&emsp;献给写作者的 Markdown 新手指南;&emsp;&emsp;简单详细的教程;&emsp;&emsp;官方文档。&emsp;&emsp;看完这三篇基本上就差不多了，美滋滋。 高颜值神器Typora&emsp;&emsp;Typora是一款极致简洁的Markdown编辑器，谁用谁知道。]]></content>
       <categories>
         <category>计算机相关技术应用</category>
       </categories>
