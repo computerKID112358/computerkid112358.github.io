@@ -1,6 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Windows+Ubuntu双系统删除Ubuntu]]></title>
+    <url>%2F2018%2F05%2F12%2FWindows%2BUbuntu%E5%8F%8C%E7%B3%BB%E7%BB%9F%E5%88%A0%E9%99%A4Ubuntu%2F</url>
+    <content type="text"><![CDATA[&emsp;&emsp;最近Ubuntu18.04版本发布了！加上之前在已经安装16.04版本瞎捣鼓，正好换个系统。之前是Windows+Ubuntu双系统，用起来有着诸多麻烦。这次就想把ubuntu系统删了，直接安装在虚拟机里。虽然这样不能充分利用电脑的内存资源，但是作为只是玩玩ubuntu的我还是追求方便，要是一不小心在ubuntu里弄坏了什么，虚拟机里可以直接删了再重装，很方便。]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
+        <tag>Bios</tag>
+        <tag>Mbr</tag>
+        <tag>Grub</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[C/C++自增自减运算符]]></title>
     <url>%2F2018%2F05%2F05%2FC%20or%20C%2B%2B%E8%87%AA%E5%A2%9E%E8%87%AA%E5%87%8F%E8%BF%90%E7%AE%97%E7%AC%A6%2F</url>
     <content type="text"><![CDATA[&emsp;&emsp;现在每天晚上抽点时间复习专业课从C/C++语言开始。C/C++的自增和自减运算符(++和— —)是比较容易出错的一种运算符，运算符++使变量自加1，而运算符— —使变量自减1。 前置运算&emsp;&emsp;++,— —在变量前面，则变量先进行加1或减1运算，然后变量再参与其他运算。1234567891011#include &lt;stdio.h&gt;int main()&#123; //前置运算 int a,b,x=5,y=6; a=++x; //x先自增变成6，再赋值给a，所以a为6 b=--y; //y先自减变成5，再赋值给b，所以b为5 printf("x=%d a=%d y=%d b=%d\n",x,a,y,b); return 0;&#125; 输出结果： x=6 a=6 y=5 b=5 后置运算&emsp;&emsp;++,— —在变量后面，则变量先参与其他运算，然后变量再进行加1或减1运算。 1234567891011#include &lt;stdio.h&gt;int main()&#123; //后置运算 int a,b,x=5,y=6; a=x++; //x先赋值给a，所以a为5，x再自增变成6 b=y--; //y先赋值给b，所以b为6，y再自减变成5 printf("x=%d a=%d y=%d b=%d\n",x,a,y,b); return 0;&#125; 输出结果： x=6 a=5 y=5 b=6 运算符++的优先级高于+&emsp;&emsp;对于x+++y的问题，到底是x+(++y)还是(x++)+y？ 1234567891011121314151617#include &lt;stdio.h&gt;int main()&#123; //x+++y的值 int a,b,x=5,y=6; a=x+++y; //等同于a=(x++)+y; /* ++的优先级高于+ a=x+++y 等价为 int b=x++; 这里b为5 int a=b+y; */ printf("a=%d\n",a); return 0;&#125; 输出结果： a=11 在函数中的引用&emsp;&emsp;自增++或自减— —运算在for循环或者printf()函数中是从右到左引用的。 1234for(int i=0;i&lt;9;i++) //先算i++，再进行i&lt;9的比较&#123; 代码块;&#125; 123456789101112#include &lt;stdio.h&gt;int main()&#123; int i=3; printf("%d,%d",i,i++); //等同于 //int a=i++; a=3,赋值给a后i变成4 //printf("%d",a); //printf("%d",i); return 0;&#125; 输出结果： 4,3 (++i)+(++i)+(++i)的值1234567891011121314#include &lt;stdio.h&gt;int main()&#123; int i=5; int a=(++i)+(++i)+(++i); //加法运算得先求得两个运算对象的值. //第一个++i,此时i=6; //第二个++i,此时i=7; //所以是7+7=14,此时i=7; //14+(++i)=14+8=22 printf("%d",a); return 0;&#125; 输出结果： 22 举一反三 123456789#include &lt;stdio.h&gt;int main()&#123; int i=5; int a=((++i)+(++i))+((++i)+(++i)); printf("%d",a); return 0;&#125; 输出结果： 32 1234567891011121314151617#include &lt;stdio.h&gt;int main()&#123; int i=5; int a=(++i)+((++i)+(++i))+(++i); //自创hhh /* 第一个(++i)时,i=6 然后进入两重括号，两重括号里的第一个(++i),i=7 两重括号里的第二个(++i),i=8 所以前面是8+(8+8) 到两重括号右边最后一个(++i),i=9 所以最终结果24+9=33 */ printf("%d",a); return 0;&#125; 输出结果： 33 总结&emsp;&emsp;平时写代码肯定不会写成这样，简直折磨自己，如果别人看你的代码肯定分分钟钟想锤你。不过面试或者考试可能会出的这么绕。]]></content>
