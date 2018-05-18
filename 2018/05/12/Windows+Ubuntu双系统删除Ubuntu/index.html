@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Linux,Bios,Mbr,Grub," />
+  <meta name="keywords" content="Bios," />
 
 
 
@@ -80,14 +80,14 @@
 
 
 <meta name="description" content="&amp;emsp;&amp;emsp;最近Ubuntu18.04版本发布了！">
-<meta name="keywords" content="Linux,Bios,Mbr,Grub">
+<meta name="keywords" content="Bios">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Windows+Ubuntu双系统删除Ubuntu">
 <meta property="og:url" content="http://yoursite.com/2018/05/12/Windows+Ubuntu双系统删除Ubuntu/index.html">
 <meta property="og:site_name" content="computerKID.Blog">
 <meta property="og:description" content="&amp;emsp;&amp;emsp;最近Ubuntu18.04版本发布了！">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-05-12T08:47:21.257Z">
+<meta property="og:updated_time" content="2018-05-18T08:05:22.675Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Windows+Ubuntu双系统删除Ubuntu">
 <meta name="twitter:description" content="&amp;emsp;&amp;emsp;最近Ubuntu18.04版本发布了！">
@@ -386,7 +386,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  131
+                  575
                 </span>
               
 
@@ -402,7 +402,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1
+                  2
                 </span>
               
             </div>
@@ -423,7 +423,9 @@
       
 
       
-        <p>&emsp;&emsp;最近Ubuntu18.04版本发布了！<a id="more"></a>加上之前在已经安装16.04版本瞎捣鼓，正好换个系统。之前是Windows+Ubuntu双系统，用起来有着诸多麻烦。这次就想把ubuntu系统删了，直接安装在虚拟机里。虽然这样不能充分利用电脑的内存资源，但是作为只是玩玩ubuntu的我还是追求方便，要是一不小心在ubuntu里弄坏了什么，虚拟机里可以直接删了再重装，很方便。</p>
+        <p>&emsp;&emsp;最近Ubuntu18.04版本发布了！<a id="more"></a>加上之前在已经安装16.04版本瞎捣鼓，正好换个系统。之前是Windows+Ubuntu双系统，用起来有着诸多麻烦。这次就想把ubuntu系统删了，直接安装在虚拟机里。虽然这样不能充分利用电脑的内存资源，但是作为只是玩玩ubuntu的我还是追求方便，要是一不小心在ubuntu里弄坏了什么，虚拟机里可以直接删了再重装，很方便。趁这个机会，整理一下有关<strong>BIOS</strong>,<strong>Mbr</strong>,<strong>UEFI</strong>,<strong>Grub</strong>的资料。</p>
+<h3 id="按下开机键后发生了什么？"><a href="#按下开机键后发生了什么？" class="headerlink" title="按下开机键后发生了什么？"></a>按下开机键后发生了什么？</h3><p>&emsp;&emsp;第一次自己尝试捣鼓重装系统时，过程可以说是非常坎坷了，一下子就接触了好多新的专业词汇:BIOS,Mbr,UEFI和Grub等等。<br>&emsp;&emsp;在了解BIOS之前，得看一看计算机的启动过程，在按下开机键后，我们的电脑到底做了哪些事。<br>&emsp;&emsp;<a href="https://blog.csdn.net/langeldep/article/details/8788119" target="_blank" rel="noopener">计算机的启动过程</a>；<br>&emsp;&emsp;<a href="https://zh.wikipedia.org/wiki/BIOS" target="_blank" rel="noopener">BIOS(来自维基百科，翻墙可访问)</a>;<br>&emsp;&emsp;一直叱咤风云的BIOS即将被UEFI BIOS淘汰，新主板将普及UEFI BIOS。<br>&emsp;&emsp;<a href="https://en.wikipedia.org/wiki/Unified_Extensible_Firmware_Interface" target="_blank" rel="noopener">UEFI(来自维基百科，翻墙可访问)</a>;</p>
+<h3 id="Windows-Ubuntu双系统删除Ubuntu"><a href="#Windows-Ubuntu双系统删除Ubuntu" class="headerlink" title="Windows+Ubuntu双系统删除Ubuntu"></a>Windows+Ubuntu双系统删除Ubuntu</h3><p>&emsp;&emsp;在安装双系统时，就要分清是BIOS还是UEFI了，因为需要根据不同情况选择方案去删除ubuntu这个系统。如果去磁盘直接删除安装ubuntu系统的分区，删完后还是Grub引导，开机的时候会发现进入了Grub的界面并不能进入Windows系统。<br>&emsp;&emsp;<a href="https://blog.csdn.net/tjuyanming/article/details/64929901" target="_blank" rel="noopener">UEFI启动Windows10+Ubuntu双系统删除Ubuntu方法</a>；<br>&emsp;&emsp;<a href="https://blog.csdn.net/u013427969/article/details/52744688" target="_blank" rel="noopener">win10 gpt分区+uefi引导 卸载双系统ubuntu</a>；<br>&emsp;&emsp;<strong>EasyUEFI</strong>这款强大的软件请在官网下载。本着一个基本原则：所有软件都要在官方网站下载，绝不从什么下载之家、未来软件园下载。这些乱七八糟的网站下载的软件最可恶的就是给你绑定一套全家套软件套餐，毕竟它打广告是有报酬的，甚至软件并不完整，用起来出现什么bug，这影响就大了。最糟的情况就是带着木马病毒什么的，那就很爆炸了。所以所以所以下载软件什么的一定要做官网下！<br>&emsp;&emsp;<a href="https://www.easyuefi.com/index-us.html" target="_blank" rel="noopener">EasyUEFI官网</a></p>
 
       
     </div>
@@ -451,13 +453,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Linux/" rel="tag"><i class="fa fa-tag"></i> Linux</a>
-          
             <a href="/tags/Bios/" rel="tag"><i class="fa fa-tag"></i> Bios</a>
-          
-            <a href="/tags/Mbr/" rel="tag"><i class="fa fa-tag"></i> Mbr</a>
-          
-            <a href="/tags/Grub/" rel="tag"><i class="fa fa-tag"></i> Grub</a>
           
         </div>
       
@@ -530,8 +526,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -572,7 +577,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-count">7</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -614,6 +619,22 @@
       </section>
 
       
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#按下开机键后发生了什么？"><span class="nav-number">1.</span> <span class="nav-text">按下开机键后发生了什么？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Windows-Ubuntu双系统删除Ubuntu"><span class="nav-number">2.</span> <span class="nav-text">Windows+Ubuntu双系统删除Ubuntu</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
 
       
 
@@ -628,7 +649,7 @@
           <h3 class="widget-title">Tag Cloud</h3>
           <div id="myCanvasContainer" class="widget tagcloud">
               <canvas width="250" height="250" id="resCanvas" style="width=100%">
-                  <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Bios/">Bios</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/C-C/">C/C++</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Grub/">Grub</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/">Java</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Markdown/">Markdown</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mbr/">Mbr</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/">Python</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a><span class="tag-list-count">1</span></li></ul>
+                  <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Bios/">Bios</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/C-C/">C/C++</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/">Java</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Markdown/">Markdown</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/">Python</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a><span class="tag-list-count">1</span></li></ul>
               </canvas>
           </div>
       </div>
@@ -677,7 +698,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共6.5k字</span>
+  <span class="post-count">博客全站共7.0k字</span>
 </div>
 
 

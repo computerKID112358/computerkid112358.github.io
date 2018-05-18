@@ -3,15 +3,12 @@
   <entry>
     <title><![CDATA[Windows+Ubuntu双系统删除Ubuntu]]></title>
     <url>%2F2018%2F05%2F12%2FWindows%2BUbuntu%E5%8F%8C%E7%B3%BB%E7%BB%9F%E5%88%A0%E9%99%A4Ubuntu%2F</url>
-    <content type="text"><![CDATA[&emsp;&emsp;最近Ubuntu18.04版本发布了！加上之前在已经安装16.04版本瞎捣鼓，正好换个系统。之前是Windows+Ubuntu双系统，用起来有着诸多麻烦。这次就想把ubuntu系统删了，直接安装在虚拟机里。虽然这样不能充分利用电脑的内存资源，但是作为只是玩玩ubuntu的我还是追求方便，要是一不小心在ubuntu里弄坏了什么，虚拟机里可以直接删了再重装，很方便。]]></content>
+    <content type="text"><![CDATA[&emsp;&emsp;最近Ubuntu18.04版本发布了！加上之前在已经安装16.04版本瞎捣鼓，正好换个系统。之前是Windows+Ubuntu双系统，用起来有着诸多麻烦。这次就想把ubuntu系统删了，直接安装在虚拟机里。虽然这样不能充分利用电脑的内存资源，但是作为只是玩玩ubuntu的我还是追求方便，要是一不小心在ubuntu里弄坏了什么，虚拟机里可以直接删了再重装，很方便。趁这个机会，整理一下有关BIOS,Mbr,UEFI,Grub的资料。 按下开机键后发生了什么？&emsp;&emsp;第一次自己尝试捣鼓重装系统时，过程可以说是非常坎坷了，一下子就接触了好多新的专业词汇:BIOS,Mbr,UEFI和Grub等等。&emsp;&emsp;在了解BIOS之前，得看一看计算机的启动过程，在按下开机键后，我们的电脑到底做了哪些事。&emsp;&emsp;计算机的启动过程；&emsp;&emsp;BIOS(来自维基百科，翻墙可访问);&emsp;&emsp;一直叱咤风云的BIOS即将被UEFI BIOS淘汰，新主板将普及UEFI BIOS。&emsp;&emsp;UEFI(来自维基百科，翻墙可访问); Windows+Ubuntu双系统删除Ubuntu&emsp;&emsp;在安装双系统时，就要分清是BIOS还是UEFI了，因为需要根据不同情况选择方案去删除ubuntu这个系统。如果去磁盘直接删除安装ubuntu系统的分区，删完后还是Grub引导，开机的时候会发现进入了Grub的界面并不能进入Windows系统。&emsp;&emsp;UEFI启动Windows10+Ubuntu双系统删除Ubuntu方法；&emsp;&emsp;win10 gpt分区+uefi引导 卸载双系统ubuntu；&emsp;&emsp;EasyUEFI这款强大的软件请在官网下载。本着一个基本原则：所有软件都要在官方网站下载，绝不从什么下载之家、未来软件园下载。这些乱七八糟的网站下载的软件最可恶的就是给你绑定一套全家套软件套餐，毕竟它打广告是有报酬的，甚至软件并不完整，用起来出现什么bug，这影响就大了。最糟的情况就是带着木马病毒什么的，那就很爆炸了。所以所以所以下载软件什么的一定要做官网下！&emsp;&emsp;EasyUEFI官网]]></content>
       <categories>
         <category>Linux</category>
       </categories>
       <tags>
-        <tag>Linux</tag>
         <tag>Bios</tag>
-        <tag>Mbr</tag>
-        <tag>Grub</tag>
       </tags>
   </entry>
   <entry>
@@ -28,7 +25,7 @@
   <entry>
     <title><![CDATA[Markdown的学习]]></title>
     <url>%2F2018%2F05%2F04%2FMarkdown%E7%9A%84%E5%AD%A6%E4%B9%A0%2F</url>
-    <content type="text"><![CDATA[&emsp;&emsp;Markdown 是一种电子邮件风格的标记语言。既然搭了博客网站，当然要写博客。我先在本地计算机用Markdown写好文章，再通过git部署到GitHub上的，然后在网页才会显示写的文章。Markdown的基本语法十分简单，一般五分钟就能学完日常基本所需的操作。 为什么选择Markdown&emsp;&emsp;既然写东西为什么不用微软的word,一开始我是有这样的疑惑的。搜了几篇文章后终于知道缘由了。&emsp;&emsp;为什么作家应该用 Markdown 保存自己的文稿。 Markdown教程&emsp;&emsp;献给写作者的 Markdown 新手指南;&emsp;&emsp;简单详细的教程;&emsp;&emsp;官方文档。&emsp;&emsp;看完这三篇基本上就差不多了，美滋滋。 高颜值神器Typora&emsp;&emsp;Typora是一款极致简洁的Markdown编辑器，谁用谁知道。]]></content>
+    <content type="text"><![CDATA[&emsp;&emsp;Markdown 是一种电子邮件风格的标记语言。既然搭了博客网站，当然要写博客。我先在本地计算机用Markdown写好文章，再通过git部署到GitHub上的，然后在网页才会显示写的文章。Markdown的基本语法十分简单，一般五分钟就能学完日常基本所需的操作。 为什么选择Markdown&emsp;&emsp;既然写东西为什么不用微软的word,一开始我是有这样的疑惑的。搜了几篇文章后终于知道缘由了。&emsp;&emsp;为什么作家应该用 Markdown 保存自己的文稿。 Markdown教程&emsp;&emsp;献给写作者的 Markdown 新手指南;&emsp;&emsp;简单详细的教程;&emsp;&emsp;官方文档。&emsp;&emsp;看完这三篇基本上就差不多了，美滋滋。 高颜值神器Typora&emsp;&emsp;Typora是一款极致简洁的Markdown编辑器，谁用谁知道。Typora的官网。]]></content>
       <categories>
         <category>计算机相关技术应用</category>
       </categories>
