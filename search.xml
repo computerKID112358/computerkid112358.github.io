@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[辗转相除法(欧几里德算法)]]></title>
+    <url>%2F2018%2F08%2F03%2F%E8%BE%97%E8%BD%AC%E7%9B%B8%E9%99%A4%E6%B3%95(%E6%AC%A7%E5%87%A0%E9%87%8C%E5%BE%B7%E7%AE%97%E6%B3%95)%2F</url>
+    <content type="text"><![CDATA[&emsp;&emsp;复习专业课数据结构，总结学过的算法，不捡起来就忘光光了。今天总结第一个算法：求解任意自然数m和n的最大公约数。 辗转相除法(欧几里德算法)的求解过程&emsp;&emsp;对于任意自然数m和n，不妨设m&gt;n，求它们的最大公约数，步骤如下：&emsp;&emsp;第一步、如果n=0,计算结束,m就是最大公约数;&emsp;&emsp;第二步、否则,计算m除以n的余数,将n的值赋给m,将余数的值赋给n;&emsp;&emsp;第三步、回到第一步 原理(证明)假设： 求m和n的最大公约数。 a,b分别是m除以n的商和余数，即m=na+b。 gcd(m,n)表示m和n的最大公约数。求证：gcd(m,n)=gcd(n,b)证明：设c=gcd(m,n), d=gcd(n,b)∵c为m和n的公约数∴m能被c整除，n也能被c整除∴na也能被c整除 参照推论一∴m-na也能被c整除(即b能c整除) 参照推论二∴c为n和b的公约数∵d为n和b的最大公约数∴c≤d同理可证 d≤c∵d为n和b的公约数∴n能被d整除，b也能被d整除∴na也能被d整除 参照推论一∴na+b也能被d整除(即m能d整除) 参照推论二∴d为m和n的公约数∵c为m和n的最大公约数∴d≤c综上所述：c=d，即gcd(m,n)=gcd(n,b) 推论一：若a能被b整除(a=tb)，则如果k为正整数，则ka也能被b整除(ka=ktb)。推论二：若a能被c整除，b也能被c整除，则(a±b)也能被c整除。 C++实现算法123456789101112131415161718192021222324#include &lt;iostream&gt;using namespace std;int main()&#123; int a,b,num1,num2,temp; cin&gt;&gt;num1&gt;&gt;num2; if(num1&lt;num2) //先将两个数排出大小 &#123; temp=num1; num1=num2; num2=temp; &#125; a=num1; b=num2; while(b!=0) //碾转相除法求最大公约数 &#123; temp=a%b; a=b; b=temp; &#125; cout&lt;&lt;a&lt;&lt;endl; //最大公约数 cout&lt;&lt;(num1*num2/a)&lt;&lt;endl; //最小公倍数=两数之积除以最大公约数 return 0;&#125; &emsp;&emsp;辗转相除法的时间复杂度为O(logN)。]]></content>
+      <categories>
+        <category>程序设计语言</category>
+      </categories>
+      <tags>
+        <tag>Algorithm</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[有关的有趣发现]]></title>
     <url>%2F2018%2F07%2F31%2F%E6%9C%89%E5%85%B3stdio.h%E7%9A%84%E6%9C%89%E8%B6%A3%E5%8F%91%E7%8E%B0%2F</url>
     <content type="text"><![CDATA[&emsp;&emsp;今天复习C语言的格式化输出函数printf()，看到这样一句话”printf()函数是一个标准库函数，。。。它的函数原型在头文件stdio.h中”。脑子一抽，冒出一个想法。 猜想&emsp;&emsp;如果用户自定义了一个头文件stdio.h，程序会不会炸，还是用户自定义的stdio.h会覆盖库文件stdio.h。根据C语言中标识符中关键字为系统所有，不能被用户重定义和作为变量使用等，猜想程序可能会炸。 实践是检验真理的唯一标准&emsp;&emsp;于是写个小程序测试一下。&emsp;&emsp;源文件main.c代码如下： 123456789101112#include&lt;stdio.h&gt; //库文件，没有它，printf()函数就不能使用#include "stdio.h" //自定义头文件，没有它，max()函数不能使用int max(int,int);int main()&#123; int a,b,c; printf("请输入a,b值："); scanf("%d%d",&amp;a,&amp;b); c=max(a,b); printf("%d",c); return 0;&#125; &emsp;&emsp;头文件stdio.h代码如下： 1234int max(int a,int b)&#123; return a&gt;b?a:b;&#125; 运行结果： 请输入a,b值：11 311 请输入a,b值：3 1212 分析&emsp;&emsp;一开始，源文件中我并没写#include “stdio.h”这个预处理，结果炸了，当时想，哦，果然不能这么用。看了一下报错的错误：max没有被defined，也就是max()函数没有找到函数原型，于是试着填了#include “stdio.h”这句预处理，结果一跑对了！&emsp;&emsp;我猜测是因为：这和预处理中文件包含相关(见我的博客”C的预处理”)，文件包含有两种。#include&lt;&gt;尖括号中包含的文件，编译器会自动去库文件中寻找。而#include “”，双引号包含的文件，编译器会自动去工程项目所在的目录下去寻找。因此，这两个文件虽然重名，但是所在位置不一样，寻找方式不一样，这样就不是同一个文件，程序可以正常运行。nice!]]></content>

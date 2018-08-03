@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="Algorithm," />
 
 
 
@@ -79,16 +79,18 @@
 
 
 
-<meta name="description" content="把美好的生命浪费在代码上">
-<meta property="og:type" content="website">
-<meta property="og:title" content="computerKID.Blog">
-<meta property="og:url" content="http://yoursite.com/archives/page/2/index.html">
+<meta name="description" content="&amp;emsp;&amp;emsp;复习专业课数据结构，总结学过的算法，不捡起来就忘光光了。">
+<meta name="keywords" content="Algorithm">
+<meta property="og:type" content="article">
+<meta property="og:title" content="辗转相除法(欧几里德算法)">
+<meta property="og:url" content="http://yoursite.com/2018/08/03/辗转相除法(欧几里德算法)/index.html">
 <meta property="og:site_name" content="computerKID.Blog">
-<meta property="og:description" content="把美好的生命浪费在代码上">
+<meta property="og:description" content="&amp;emsp;&amp;emsp;复习专业课数据结构，总结学过的算法，不捡起来就忘光光了。">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-08-03T11:24:58.481Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="computerKID.Blog">
-<meta name="twitter:description" content="把美好的生命浪费在代码上">
+<meta name="twitter:title" content="辗转相除法(欧几里德算法)">
+<meta name="twitter:description" content="&amp;emsp;&amp;emsp;复习专业课数据结构，总结学过的算法，不捡起来就忘光光了。">
 
 
 
@@ -118,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/archives/page/2/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/08/03/辗转相除法(欧几里德算法)/"/>
 
 
 
 
 
-  <title>归档 | computerKID.Blog</title>
+  <title>辗转相除法(欧几里德算法) | computerKID.Blog</title>
   
 
 
@@ -143,7 +145,7 @@
     
   
 
-  <div class="container sidebar-position-left page-archive">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <a href="https://github.com/" class="github-corner" aria-label="View source on Github"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
@@ -287,189 +289,223 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block archive">
-    <div id="posts" class="posts-collapse">
-      <span class="archive-move-on"></span>
+  <div id="posts" class="posts-expand">
+    
 
-      <span class="archive-page-counter">
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/03/辗转相除法(欧几里德算法)/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="computerKID">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/KID.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="computerKID.Blog">
+    </span>
+
+    
+      <header class="post-header">
+
         
         
+          <h1 class="post-title" itemprop="name headline">辗转相除法(欧几里德算法)</h1>
         
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-03T18:36:17+08:00">
+                2018-08-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
           
-        
-        嗯..! 目前共计 14 篇日志。 继续努力。
-      </span>
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/程序设计语言/" itemprop="url" rel="index">
+                    <span itemprop="name">程序设计语言</span>
+                  </a>
+                </span>
 
-      
-
-        
-        
-        
-
-        
+                
+                
+              
+            </span>
           
-          <div class="collection-title">
-            <h1 class="archive-year" id="archive-year-2018">2018</h1>
-          </div>
-        
-        
 
-        
+          
+            
+          
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+          
+          
 
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/04/27/Git大法好/" itemprop="url">
+          
+
+          
+            <div class="post-wordcount">
               
-                <span itemprop="name">git大法好</span>
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  544
+                </span>
               
-            </a>
-        
-      </h2>
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-04-27T20:52:10+08:00"
-              content="2018-04-27" >
-          04-27
-        </time>
-      </div>
+              
+                <span class="post-meta-divider">|</span>
+              
 
-    </header>
-  </article>
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  2
+                </span>
+              
+            </div>
+          
 
+          
 
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/04/24/C的预处理/" itemprop="url">
-              
-                <span itemprop="name">C的预处理</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-04-24T21:34:37+08:00"
-              content="2018-04-24" >
-          04-24
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
       
 
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/04/22/hexo+GitHub+next搭建博客/" itemprop="url">
-              
-                <span itemprop="name">hexo+GitHub+next搭建博客</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-04-22T14:45:07+08:00"
-              content="2018-04-22" >
-          04-22
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
+      
+        <p>&emsp;&emsp;复习专业课数据结构，总结学过的算法，不捡起来就忘光光了。<a id="more"></a>今天总结第一个算法：求解任意自然数m和n的最大公约数。</p>
+<h3 id="辗转相除法-欧几里德算法-的求解过程"><a href="#辗转相除法-欧几里德算法-的求解过程" class="headerlink" title="辗转相除法(欧几里德算法)的求解过程"></a>辗转相除法(欧几里德算法)的求解过程</h3><p>&emsp;&emsp;对于任意自然数m和n，不妨设m&gt;n，求它们的最大公约数，步骤如下：<br>&emsp;&emsp;第一步、如果n=0,计算结束,m就是最大公约数;<br>&emsp;&emsp;第二步、否则,计算m除以n的余数,将n的值赋给m,将余数的值赋给n;<br>&emsp;&emsp;第三步、回到第一步</p>
+<h3 id="原理-证明"><a href="#原理-证明" class="headerlink" title="原理(证明)"></a>原理(证明)</h3><p><strong>假设：</strong></p>
+<ol>
+<li><p>求m和n的最大公约数。</p>
+</li>
+<li><p>a,b分别是m除以n的商和余数，即m=na+b。</p>
+</li>
+<li><p>gcd(m,n)表示m和n的最大公约数。<br><strong>求证：</strong>gcd(m,n)=gcd(n,b)<br><strong>证明：</strong>设c=gcd(m,n), d=gcd(n,b)<br>∵c为m和n的公约数<br>∴m能被c整除，n也能被c整除<br>∴na也能被c整除  参照推论一<br>∴m-na也能被c整除(即b能c整除)  参照推论二<br>∴c为n和b的公约数<br>∵d为n和b的最大公约数<br>∴c≤d<br>同理可证 d≤c<br>∵d为n和b的公约数<br>∴n能被d整除，b也能被d整除<br>∴na也能被d整除  参照推论一<br>∴na+b也能被d整除(即m能d整除)  参照推论二<br>∴d为m和n的公约数<br>∵c为m和n的最大公约数<br>∴d≤c<br>综上所述：c=d，即gcd(m,n)=gcd(n,b)</p>
+</li>
+</ol>
+<p><strong>推论一：</strong>若a能被b整除(a=tb)，则如果k为正整数，则ka也能被b整除(ka=ktb)。<br><strong>推论二：</strong>若a能被c整除，b也能被c整除，则(a±b)也能被c整除。</p>
+<h3 id="C-实现算法"><a href="#C-实现算法" class="headerlink" title="C++实现算法"></a>C++实现算法</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> a,b,num1,num2,temp;</span><br><span class="line">	<span class="built_in">cin</span>&gt;&gt;num1&gt;&gt;num2;</span><br><span class="line">	<span class="keyword">if</span>(num1&lt;num2)     <span class="comment">//先将两个数排出大小</span></span><br><span class="line">	&#123;</span><br><span class="line">		temp=num1;</span><br><span class="line">		num1=num2;</span><br><span class="line">		num2=temp;</span><br><span class="line">	&#125;</span><br><span class="line">	a=num1;</span><br><span class="line">	b=num2;</span><br><span class="line">	<span class="keyword">while</span>(b!=<span class="number">0</span>)        <span class="comment">//碾转相除法求最大公约数</span></span><br><span class="line">	&#123;</span><br><span class="line">		temp=a%b;</span><br><span class="line">		a=b;</span><br><span class="line">		b=temp;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">cout</span>&lt;&lt;a&lt;&lt;<span class="built_in">endl</span>;                   <span class="comment">//最大公约数</span></span><br><span class="line">	<span class="built_in">cout</span>&lt;&lt;(num1*num2/a)&lt;&lt;<span class="built_in">endl</span>;       <span class="comment">//最小公倍数=两数之积除以最大公约数</span></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>&emsp;&emsp;辗转相除法的时间复杂度为O(logN)。 </p>
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/04/16/hello-world/" itemprop="url">
-              
-                <span itemprop="name">Hello World</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-04-16T22:02:13+08:00"
-              content="2018-04-16" >
-          04-16
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
     </div>
+    
+    
+    
+
+    <div>
+      
+        <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+    
+</div>
+      
+    </div>
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Algorithm/" rel="tag"><i class="fa fa-tag"></i> Algorithm</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/07/31/有关stdio.h的有趣发现/" rel="next" title="有关<stdio.h>的有趣发现">
+                <i class="fa fa-chevron-left"></i> 有关<stdio.h>的有趣发现
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
-
-  
-  <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/archives/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/archives/">1</a><span class="page-number current">2</span>
-  </nav>
+  </article>
 
 
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -477,6 +513,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -497,8 +537,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -580,6 +629,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#辗转相除法-欧几里德算法-的求解过程"><span class="nav-number">1.</span> <span class="nav-text">辗转相除法(欧几里德算法)的求解过程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#原理-证明"><span class="nav-number">2.</span> <span class="nav-text">原理(证明)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#C-实现算法"><span class="nav-number">3.</span> <span class="nav-text">C++实现算法</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -751,6 +816,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
