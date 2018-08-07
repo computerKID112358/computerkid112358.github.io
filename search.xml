@@ -23,7 +23,7 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[有关的有趣发现]]></title>
+    <title><![CDATA[有关头文件的有趣发现]]></title>
     <url>%2F2018%2F07%2F31%2F%E6%9C%89%E5%85%B3stdio.h%E7%9A%84%E6%9C%89%E8%B6%A3%E5%8F%91%E7%8E%B0%2F</url>
     <content type="text"><![CDATA[&emsp;&emsp;今天复习C语言的格式化输出函数printf()，看到这样一句话”printf()函数是一个标准库函数，。。。它的函数原型在头文件stdio.h中”。脑子一抽，冒出一个想法。 猜想&emsp;&emsp;如果用户自定义了一个头文件stdio.h，程序会不会炸，还是用户自定义的stdio.h会覆盖库文件stdio.h。根据C语言中标识符中关键字为系统所有，不能被用户重定义和作为变量使用等，猜想程序可能会炸。 实践是检验真理的唯一标准&emsp;&emsp;于是写个小程序测试一下。&emsp;&emsp;源文件main.c代码如下： 123456789101112#include&lt;stdio.h&gt; //库文件，没有它，printf()函数就不能使用#include "stdio.h" //自定义头文件，没有它，max()函数不能使用int max(int,int);int main()&#123; int a,b,c; printf("请输入a,b值："); scanf("%d%d",&amp;a,&amp;b); c=max(a,b); printf("%d",c); return 0;&#125; &emsp;&emsp;头文件stdio.h代码如下： 1234int max(int a,int b)&#123; return a&gt;b?a:b;&#125; 运行结果： 请输入a,b值：11 311 请输入a,b值：3 1212 分析&emsp;&emsp;一开始，源文件中我并没写#include “stdio.h”这个预处理，结果炸了，当时想，哦，果然不能这么用。看了一下报错的错误：max没有被defined，也就是max()函数没有找到函数原型，于是试着填了#include “stdio.h”这句预处理，结果一跑对了！&emsp;&emsp;我猜测是因为：这和预处理中文件包含相关(见我的博客”C的预处理”)，文件包含有两种。#include&lt;&gt;尖括号中包含的文件，编译器会自动去库文件中寻找。而#include “”，双引号包含的文件，编译器会自动去工程项目所在的目录下去寻找。因此，这两个文件虽然重名，但是所在位置不一样，寻找方式不一样，这样就不是同一个文件，程序可以正常运行。nice!]]></content>
       <categories>
