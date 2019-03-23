@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[2019年3,4,5,6月份学习任务与计划]]></title>
+    <url>%2F2019%2F03%2F23%2F2019%E5%B9%B44%2C5%2C6%E6%9C%88%E4%BB%BD%E5%AD%A6%E4%B9%A0%E4%BB%BB%E5%8A%A1%E4%B8%8E%E8%AE%A1%E5%88%92%2F</url>
+    <content type="text"><![CDATA[2019年3,4,5,6月份学习任务与计划&emsp;&emsp;**过往已去，未来可期“” &emsp;&emsp;年龄越大，越懂得要努力呀，愿以后活的精彩些。—-2019-3-23 by computerkid 任务 mooc视频：javaweb(java+html+js+css+jsp+servlet+数据库MySQL+Spring框架) linux基础了解：系统的基础知识+linux常用命令+vim+shell 计算机网络 java算法和简单的数据结构 git 计划 上午：英语+linux+git（菜鸟教程+廖雪峰网站） 下午：mooc视频+java算法 晚上：毕设+计网]]></content>
+      <categories>
+        <category>task</category>
+      </categories>
+      <tags>
+        <tag>task</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[day01_java初识]]></title>
     <url>%2F2019%2F03%2F22%2Fday01_java%E5%88%9D%E8%AF%86%2F</url>
     <content type="text"><![CDATA[内容纲要 java小历史以及地位 java的平台无关性：字节码指令、JVM、JRE、JDK java源文件的编写、保存和运行：public class、public static void main(String[] args){} java应用程序的基本结构 代码风格 java的历史以及地位&emsp;&emsp;java是一门面向对象的程序设计语言，1995年由sun公司发布，取名于叫java的coffee。2010年sun公司被Oracle公司收购。&emsp;&emsp;java的地位从两个方面可以看出。第一个方面：TIOBE的官方数据一定程度科学地展示某种编程语言的热度，2019年3月份java已经挤入第一名了，干掉了C和C++两位老大哥啊；第二个方面：网络已经成为信息时代最重要的交互媒介，那么基于网络的软件设计就成为软件设计领域的核心。java的平台无关性让java成为编写网络应用程序的佼佼者，而且java提供了许多以网络应用为核心的技术，使得java特别适用于网络应用软件的设计和开发。 java的平台无关性​ java最大的优点就是平台无关性了吧，让它独领风骚。 JVM(Java Virtual Machine)：java虚拟机。是实现java平台无关性的关键。 java程序执行过程：Program.java源文件由编译器compiler生成Program.class字节码文件，再通过解释器interpreter(JVM)把字节码文件解释成对应平台上二进制机器指令。实现了一次编译，到处运行。 JDK(Java Develoment Kit),java语言的软件开发工具包。 两个主要组件： javac–编译器，将源程序转成字节码,加后缀.java,文件名要与主类名一致 java—运行编译后的java程序。注意不加后缀.class JRE(Java Runtime Environment):包括java虚拟机(JVM)、java核心类库和支持文件。 如果只需要运行java程序，下载并安装JRE即可；如果要开发java软件，需要下载JDK。JDK中附带JRE。 JRE=JVM+javaSE标准类库 JDK=JRE+开发工具集(例如javac编译工具等) java源文件的编写、保存和运行12345678910111213141516171819202122232425262728293031323334353637383940// 2019/2/9 by tangshunpublic class Rect &#123; /*如果源文件中有多个类，那么只能有一个类是public类， * 那么源文件名必须与这个类名字完全相同 * */ double width; //长方形的宽 double height; //长方形的长 double getArea()&#123; return width*height; &#125;&#125;class Example&#123; /*有public static void main(String[] args) * 是主类。 * args这个参数是可变得 * */ public static void main(String[] args) &#123; // TODO Auto-generated method stub Rect rectangle=new Rect(); rectangle.height=1.819; rectangle.width=2; double area=rectangle.getArea(); System.out.println("矩形面积："+area); &#125;&#125;//class Main&#123;//一个完整的java程序中，可能存在多个main()方法，// //但是作为程序入口的只能选其中一个。// public static void main(String[] args)&#123;// // &#125;//&#125;/*如果是文本编辑器编译这个程序 * 第一步：将java源文件命名保存为Rect.java * 第二步：编译 C:&gt;javac Rect.java javac.exe java编译器 * 第三步：执行C:&gt;java Example java.exe java解释器 * java命令后的名字必须是主类的名字(不包括拓展名) * */ java应用程序的基本结构&emsp;&emsp;一个java应用程序（也称为一个工程）是由若干个类构成的，这些类可以在一个源文件中，也可以分布在若干个源文件中。一个源文件由主类（含有main方法的类）和其他类构成。一个源文件编译后，它的每个类都会对应生成字节码文件.class，在同一目录下。 代码风格 适当的注释 类名，方法名，变量名取英文名并见名知其意。符合驼峰法命名规则(e.g. stuNameFunc)和Pascal命令规则(e.g. StuNameFunc)。 ALLmans风格：左右大括号各自独占一行（个人比较喜欢这种，但是好像很多官方代码都是Kernighan风格） 1234double getArea()&#123; return width*height;&#125; Kernighan风格：左大括号在上一行末尾，右大括号独占一行。 123double getArea()&#123; return width*height;&#125;]]></content>
